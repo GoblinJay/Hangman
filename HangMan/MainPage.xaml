@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HangMan"
+             x:DataType="local:MainPage"
+             x:Class="HangMan.MainPage"
+             BackgroundColor="White">
+
+    <Grid VerticalOptions="Center" Margin="0,15,0,0">
+        <VerticalStackLayout Spacing="10">
+            <!-- Title -->
+            <Label 
+                Text="Jay's Hangman Game"
+                FontSize="24"
+                FontAttributes="Bold"
+                TextColor="Black"
+                HorizontalOptions="Center" />
+            
+            <!-- Game Info -->
+            <Label 
+                Text="{Binding MistakesDisplay}"
+                FontSize="18"
+                HorizontalOptions="Center" />
+            
+            <!-- Game Image -->
+            <Image 
+                Source="{Binding CurrentImage}"
+                HeightRequest="140"
+                WidthRequest="140"
+                HorizontalOptions="Center" />
+            
+            <!-- Word display with underscores -->
+            <Label 
+                Text="{Binding Spotlight}"
+                FontSize="32"
+                FontAttributes="Bold"
+                FontFamily="Monospace"
+                TextColor="Black"
+                Margin="0,5"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center" />
+            
+            <!-- Game Message -->
+            <Label 
+                Text="{Binding Message}"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="Red"
+                IsVisible="{Binding HasMessage}"
+                LineBreakMode="WordWrap"
+                HorizontalTextAlignment="Center"
+                MaxLines="2"
+                Margin="0,0,0,5"
+                HorizontalOptions="Center" />
+            
+            <!-- Reset Button -->
+            <Button 
+                Text="Reset"
+                Clicked="ResetGame"
+                HorizontalOptions="Center"
+                WidthRequest="100"
+                HeightRequest="40"
+                Margin="0,0,0,10"
+                BackgroundColor="Indigo"
+                TextColor="White"
+                CornerRadius="4" />
+            
+            <!-- Keyboard area -->
+            <Grid x:Name="KeyboardGrid" RowDefinitions="Auto,Auto,Auto,Auto" Margin="0,0,0,10">
+                <!-- Row 1: a-g -->
+                <HorizontalStackLayout Grid.Row="0" HorizontalOptions="Center">
+                    <Button Text="a" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="b" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="c" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="d" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="e" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="f" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="g" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                </HorizontalStackLayout>
+                
+                <!-- Row 2: h-n -->
+                <HorizontalStackLayout Grid.Row="1" HorizontalOptions="Center">
+                    <Button Text="h" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="i" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="j" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="k" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="l" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="m" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="n" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                </HorizontalStackLayout>
+                
+                <!-- Row 3: o-u -->
+                <HorizontalStackLayout Grid.Row="2" HorizontalOptions="Center">
+                    <Button Text="o" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="p" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="q" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="r" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="s" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="t" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="u" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                </HorizontalStackLayout>
+                
+                <!-- Row 4: v-z -->
+                <HorizontalStackLayout Grid.Row="3" HorizontalOptions="Center">
+                    <Button Text="v" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="w" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="x" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="y" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                    <Button Text="z" Clicked="Button_Clicked" Margin="2" WidthRequest="38" HeightRequest="38" FontSize="16" BackgroundColor="Indigo" TextColor="White" />
+                </HorizontalStackLayout>
+            </Grid>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
