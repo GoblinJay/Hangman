@@ -251,24 +251,10 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
 	
 	private IEnumerable<Button> GetAllAlphabetButtons()
 	{
-		// Find all letter buttons in the keyboard layout
+		// Find all letter buttons in the FlexLayout
 		List<Button> buttons = new List<Button>();
 		
-		// Find each HorizontalStackLayout in Grid Row 2 (keyboard area)
-		var grid = this.FindByName<Grid>("KeyboardGrid");
-		if (grid != null)
-		{
-			foreach (var layout in grid.Children.OfType<HorizontalStackLayout>())
-			{
-				foreach (var button in layout.Children.OfType<Button>())
-				{
-					buttons.Add(button);
-				}
-			}
-			return buttons;
-		}
-		
-		// Fallback if grid is not found
+		// Find all child buttons with a single letter as Text
 		foreach (var element in this.GetVisualTreeDescendants())
 		{
 			if (element is Button button && 
