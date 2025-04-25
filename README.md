@@ -5,13 +5,13 @@ A classic word-guessing game built with .NET MAUI. Try to guess the hidden word 
 ## Game Screenshots
 
 ### Game Start
-![Hangman Cover](HangMan/Resources/Images/hangmancover.png)
+![Hangman Cover](HangMan/Resources/Images/HangManCover.png)
 
 ### Winning the Game
-![Hangman Win](HangMan/Resources/Images/hangmanwin.png)
+![Hangman Win](HangMan/Resources/Images/HangManWin.png)
 
 ### Losing the Game
-![Hangman Loss](HangMan/Resources/Images/hangmanloss.png)
+![Hangman Loss](HangMan/Resources/Images/HangManLoss.png)
 
 ## Features
 
