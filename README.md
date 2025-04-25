@@ -2,7 +2,16 @@
 
 A classic word-guessing game built with .NET MAUI. Try to guess the hidden word by selecting letters, but be careful—you only get 6 mistakes before losing!
 
-![Hangman Game Screenshot](screenshot.png)
+## Game Screenshots
+
+### Game Start
+![Hangman Cover](HangMan/Resources/Images/hangmancover.png)
+
+### Winning the Game
+![Hangman Win](HangMan/Resources/Images/hangmanwin.png)
+
+### Losing the Game
+![Hangman Loss](HangMan/Resources/Images/hangmanloss.png)
 
 ## Features
 
