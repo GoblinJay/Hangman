@@ -8,10 +8,10 @@ A classic word-guessing game built with .NET MAUI. Try to guess the hidden word 
 ![Hangman Cover](HangMan/Resources/Images/HangManCover.png)
 
 ### Winning the Game
-![Hangman Win](HangMan/Resources/Images/HangManWinScreen.png)
+![Hangman Win](HangMan/Resources/Images/HangmanWinScreen.png)
 
 ### Losing the Game
-![Hangman Loss](HangMan/Resources/Images/HangManLossScreen.png)
+![Hangman Loss](HangMan/Resources/Images/HangmanLossScreen.png)
 
 ## Features
 
